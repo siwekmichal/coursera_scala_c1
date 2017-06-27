@@ -43,6 +43,10 @@ class Sum(e1: Expr, e2: Expr) extends Expr {
 }
 
 
+
+/* VERSION 2
+ * Object-Oriented Decomposition
+ */
 trait Expr2 {
   def eval: Int
   override def toString = eval.toString()
@@ -66,6 +70,8 @@ trait Expr3{
     case Number3 (n) => n
     case Sum3(e1, e2) =>  e1.eval + e2.eval //eval(e1) + eval(e2)
   }
+  
+//  override def toString = eval.toString()
   
 }
 case class Number3(n: Int) extends Expr3

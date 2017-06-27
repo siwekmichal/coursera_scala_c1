@@ -1,0 +1,6 @@
+
+TYPE TEST AND TYPE CASTS
+Scala					Java
+x.isIstanceOf[T]		x instanceof T
+x.asIstanceOf[T]		(T) x
+

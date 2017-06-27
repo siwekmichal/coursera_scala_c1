@@ -1,0 +1,52 @@
+exaples of lists
+
+
+var fruits: List[String]		=	List("apples","oranges","pears")
+var nums	: List[Int]				=	List(1, 2, 3, 4)
+var diag3 : List[List[Int]]	=	List(List(1, 0, 0), List(0, 1, 0), List(0, 0, 1))
+var empty	: List[Nothing]		= List()
+
+fruits 	= "apples" :: ("oranges" :: ("pears" :: Nil)  )
+nums   	= 1 :: (2 :: (3 :: (4 :: Nil)))
+empty 	=	Nil
+
+val nums = 1 :: 2 :: 3 :: 4 :: Nil
+val nums = Nil.::(4).::(3).::(2).::(1)
+
+
+head - the first element of the list
+tail - the list composed of all the elements except the first
+isEmpty - 'true' if the list is empty, 'false' otherwise
+
+fruit.head 		== "apples"
+fruit.tail.head	== "oranges"
+diag.head		==	List(1, 0, 0)
+empty.head		== throw new NoSuchElementException("head of empty list")
+
+
+LIST PATTERNS
+NIl					The Nil constant
+P :: ps				A pattern that matches a list with a head matching p and a tail matching ps
+List(p1, ..., pn)	same as p1 :: ... :: pn :: Nil
+
+Example
+1 :: 2 :: xs	List of that start with 1 and then 2
+x :: Nil		List of length 1
+List(x)			Same as x :: Nil
+List()			The empty list, same as Nil
+List(2 :: xs)	A list that contains as only element another list that starts with 2. 
+
+
+
+INSERTION SORT ALGORITM
+def isort(xs: List[Int]): List[Int] = xs match {
+	case List() => List()
+	case y :: xs => insert(y, isort(ys))
+}
+
+def insert(x: Int, xs: List[Int]): List[Int] = xs match {
+	case List() => List(x)
+	case y :: ys => if (x <= y) x :: xs else y :: insert(x, ys)
+}
+
+worst-case complecity of insertion sort  

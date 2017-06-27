@@ -43,5 +43,5 @@ object Nil extends List[Nothing] {
 
 object test {
   val x: List[String] = Nil
-  def f(xs: List[NonEmpty], x: Empty ) = xs prepend x
+  def f(xs: List[NonEmpty], x: Empty ) = xs prepend x  // result type is List[IntSet] because IntSet is supertype of Empty and NonEmpty
 }
